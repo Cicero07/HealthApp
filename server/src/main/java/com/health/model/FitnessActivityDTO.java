@@ -8,19 +8,24 @@ public class FitnessActivityDTO {
     private int activity_id;
     private int user_id;
     private String activity_type;
-    private Duration duration;
     private String intensity;
+    private String notes;
+    private int duration_hours;
+    private int duration_minutes;
+    private String date;
 
-    //potentially add a notes section for specifically wht they did in their workout 
-    private LocalDateTime current_Timestamp;
+    public FitnessActivityDTO(){} //Method preceding for mapRowToUser method
 
-    public FitnessActivityDTO(int activity_id, int user_id, String activity_type, Duration duration, String intensity, LocalDateTime current_Timestamp) {
+    public FitnessActivityDTO(int activity_id, int user_id, String activity_type, String intensity,String notes
+            , int duration_hours,int duration_minutes, String date) {
         this.activity_id = activity_id;
         this.user_id = user_id;
         this.activity_type = activity_type;
-        this.duration = duration;
         this.intensity = intensity;
-        this.current_Timestamp = current_Timestamp;
+        this.notes = notes;
+        this.duration_hours = duration_hours;
+        this.duration_minutes = duration_minutes;
+        this.date = date;
     }
 
     public int getActivity_id() {
@@ -47,14 +52,6 @@ public class FitnessActivityDTO {
         this.activity_type = activity_type;
     }
 
-    public Duration getDuration() {
-        return duration;
-    }
-
-    public void setDuration(Duration duration) {
-        this.duration = duration;
-    }
-
     public String getIntensity() {
         return intensity;
     }
@@ -63,11 +60,38 @@ public class FitnessActivityDTO {
         this.intensity = intensity;
     }
 
-    public LocalDateTime getCurrent_Timestamp() {
-        return current_Timestamp;
+    public String getNotes() {
+        return notes;
     }
 
-    public void setCurrent_Timestamp(LocalDateTime current_Timestamp) {
-        this.current_Timestamp = current_Timestamp;
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public int getDuration_hours() {
+        return duration_hours;
+    }
+
+    public void setDuration_hours(int duration_hours) {
+        this.duration_hours = duration_hours;
+    }
+
+    public int getDuration_minutes() {
+        return duration_minutes;
+    }
+
+    public void setDuration_minutes(int duration_minutes) {
+        this.duration_minutes = duration_minutes;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
+
+
+

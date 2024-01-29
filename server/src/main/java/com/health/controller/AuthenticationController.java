@@ -3,6 +3,7 @@ package com.health.controller;
 import javax.validation.Valid;
 
 import com.health.dao.UserDao;
+import com.health.exceptionhandling.RegistrationException;
 import com.health.model.LoginDTO;
 import com.health.service.UserService;
 import org.springframework.http.HttpStatus;
@@ -58,8 +59,10 @@ public class AuthenticationController {
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public void register(@Valid @RequestBody RegisterUserDTO newUser) {
-        if (!userDao.create(newUser.getUsername(), newUser.getPassword())) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "User registration failed.");
+        try {
+            userService.registerUser(newUser);
+        } catch (RegistrationException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, e.getMessage());
         }
     }
 
@@ -93,5 +96,5 @@ public class AuthenticationController {
 			this.user = user;
 		}
     }
-}
 
+}

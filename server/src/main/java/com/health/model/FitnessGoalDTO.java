@@ -7,19 +7,19 @@ public class FitnessGoalDTO {
     private int goal_id;
     private int user_id;
     private String goal_type;
-    private double target_value;
-    private Date start_date;
-    private Date end_date;
-    private double progress;
+    private String start_date;
+    private String end_date;
+    private String action_plan;
 
-    public FitnessGoalDTO(int goal_id, int user_id, String goal_type, double target_value, Date start_date, Date end_date, double progress) {
+    public FitnessGoalDTO(){}
+
+    public FitnessGoalDTO(int goal_id,int user_id, String goal_type,String start_date, String end_date, String action_plan) {
         this.goal_id = goal_id;
         this.user_id = user_id;
         this.goal_type = goal_type;
-        this.target_value = target_value;
         this.start_date = start_date;
         this.end_date = end_date;
-        this.progress = progress;
+        this.action_plan = action_plan;
     }
 
     public int getGoal_id() {
@@ -46,35 +46,27 @@ public class FitnessGoalDTO {
         this.goal_type = goal_type;
     }
 
-    public double getTarget_value() {
-        return target_value;
-    }
-
-    public void setTarget_value(double target_value) {
-        this.target_value = target_value;
-    }
-
-    public Date getStart_date() {
+    public String getStart_date() {
         return start_date;
     }
 
-    public void setStart_date(Date start_date) {
+    public void setStart_date(String start_date) {
         this.start_date = start_date;
     }
 
-    public Date getEnd_date() {
+    public String getEnd_date() {
         return end_date;
     }
 
-    public void setEnd_date(Date end_date) {
+    public void setEnd_date(String end_date) {
         this.end_date = end_date;
     }
 
-    public double getProgress() {
-        return progress;
+    public String getAction_plan() {
+        return action_plan;
     }
 
-    public void setProgress(double progress) {
-        this.progress = progress;
+    public void setAction_plan(String action_plan) {
+        this.action_plan = action_plan;
     }
 }

@@ -36,10 +36,11 @@ CREATE TABLE fitness_activity (
     activity_id int DEFAULT nextval('seq_activity_id'),
     user_id int,
     activity_type VARCHAR(50) NOT NULL,
-    duration INTERVAL,
     intensity VARCHAR(50),
     notes TEXT,
-    timestamp TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+    duration_hours INT,
+    duration_minutes INT,
+    date VARCHAR;
 	CONSTRAINT PK_fitness_activity PRIMARY KEY (activity_id),
     CONSTRAINT FK_fitness_activity_user FOREIGN KEY (user_id) REFERENCES fitness_user(user_id)
 );
@@ -55,10 +56,9 @@ CREATE TABLE fitness_goal (
     goal_id int NOT NULL DEFAULT nextval('seq_goal_id'),
     user_id INT,
     goal_type VARCHAR(255) NOT NULL,
-    target_value FLOAT,
-    start_date DATE,
-    end_date DATE,
-    progress FLOAT,
+    start_date VARCHAR,
+    end_date VARCHAR,
+    action_plan TEXT,
 	CONSTRAINT PK_fitness_goal PRIMARY KEY (goal_id),
     CONSTRAINT FK_fitness_goal_user FOREIGN KEY (user_id) REFERENCES fitness_user(user_id)
 );
