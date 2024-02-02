@@ -78,9 +78,19 @@ CREATE TABLE nutrition_entry (
     proteins FLOAT,
     carbs FLOAT,
     fats FLOAT,
-    entry_date DATE DEFAULT CURRENT_DATE,
+    entry_date VARCHAR(255),
 	CONSTRAINT PK_nutrition_entry PRIMARY KEY (nutrition_id),
     CONSTRAINT FK_nutrition_entry_user FOREIGN KEY (user_id) REFERENCES fitness_user(user_id)
+);
+
+CREATE TABLE user_nutrition_totals (
+    user_id INT NOT NULL,
+    total_calories FLOAT,
+    total_proteins FLOAT,
+    total_carbs FLOAT,
+    total_fats FLOAT,
+    CONSTRAINT PK_nutrition_totals_new PRIMARY KEY (user_id),
+    CONSTRAINT FK_nutrition_totals_new_user FOREIGN KEY (user_id) REFERENCES fitness_user(user_id)
 );
 
 COMMIT;

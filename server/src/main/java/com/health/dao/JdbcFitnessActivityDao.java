@@ -126,14 +126,6 @@ public class JdbcFitnessActivityDao implements FitnessActivityDao{
 
 
 
-
-
-
-
-
-
-
-    // Have DAO Methods go above Mapping method
     private FitnessActivityDTO mapRowToUser(SqlRowSet rowSet){
         FitnessActivityDTO fitnessActivityDTO = new FitnessActivityDTO();
         fitnessActivityDTO.setActivity_type(rowSet.getString("activity_type"));

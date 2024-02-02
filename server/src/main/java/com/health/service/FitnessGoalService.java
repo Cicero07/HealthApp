@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class FitnessGoalService {
 
-    JdbcFitnessGoalDao jdbcFitnessGoalDao;
+   private final JdbcFitnessGoalDao jdbcFitnessGoalDao;
 
     public FitnessGoalService(JdbcFitnessGoalDao jdbcFitnessGoalDao) {
         this.jdbcFitnessGoalDao = jdbcFitnessGoalDao;

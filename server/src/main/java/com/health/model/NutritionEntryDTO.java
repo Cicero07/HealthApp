@@ -11,8 +11,21 @@ public class NutritionEntryDTO {
     private double proteins;
     private double carbs;
     private double fats;
-    private Date entry_date;
+    private String entry_date;
 
+
+    public NutritionEntryDTO(int nutrition_id, int user_id, String food_name, double calories, double proteins, double carbs, double fats, String entry_date) {
+        this.nutrition_id = nutrition_id;
+        this.user_id = user_id;
+        this.food_name = food_name;
+        this.calories = calories;
+        this.proteins = proteins;
+        this.carbs = carbs;
+        this.fats = fats;
+        this.entry_date = entry_date;
+    }
+
+    public NutritionEntryDTO(){}
     public int getNutrition_id() {
         return nutrition_id;
     }
@@ -69,24 +82,13 @@ public class NutritionEntryDTO {
         this.fats = fats;
     }
 
-    public Date getEntry_date() {
+    public String getEntry_date() {
         return entry_date;
     }
 
-    public void setEntry_date(Date entry_date) {
+    public void setEntry_date(String entry_date) {
         this.entry_date = entry_date;
     }
 
-    public NutritionEntryDTO(int nutrition_id, int user_id, String food_name, double calories, double proteins, double carbs, double fats, Date entry_date) {
-        this.nutrition_id = nutrition_id;
-        this.user_id = user_id;
-        this.food_name = food_name;
-        this.calories = calories;
-        this.proteins = proteins;
-        this.carbs = carbs;
-        this.fats = fats;
-        this.entry_date = entry_date;
 
-
-    }
 }

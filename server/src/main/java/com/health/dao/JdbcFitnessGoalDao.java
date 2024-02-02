@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class JdbcFitnessGoalDao {
+public class JdbcFitnessGoalDao implements FitnessGoalDao{
 
     private JdbcTemplate jdbcTemplate;
 
